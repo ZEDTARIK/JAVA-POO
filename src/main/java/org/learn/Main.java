@@ -3,7 +3,9 @@ package org.learn;
 import org.learn.model.AccountBank;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,6 +26,17 @@ public class Main {
 
         for (AccountBank c : accountBanks) displayAccount(c);
 
+        System.out.println("*********************************************");
+
+        System.out.println("********************* Map ************************");
+
+        Map<String, AccountBank> accountBankMap = new HashMap<>();
+        accountBankMap.put("compte1", new AccountBank());
+        accountBankMap.put("compte2", new AccountBank());
+        accountBankMap.put("compte3", new AccountBank());
+
+        AccountBank cc = accountBankMap.get("compte2");
+        displayAccount(cc);
         System.out.println("*********************************************");
 
     }
