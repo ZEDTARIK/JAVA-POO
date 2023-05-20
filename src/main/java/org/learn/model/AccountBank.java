@@ -54,4 +54,8 @@ public abstract class AccountBank {
     }
 
     public  abstract String getType();
+
+    public  final  void  getName(){
+        System.out.println("Account Bank");
+    }
 }
