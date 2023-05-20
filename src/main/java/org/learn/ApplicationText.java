@@ -24,5 +24,12 @@ public class ApplicationText {
             System.out.println(allAccountBank.get(i).toString());
         }
 
+        // or using this for
+
+        System.out.println("\n");
+        for (AccountBank account: allAccountBank) {
+        System.out.println(account);
+        }
+
     }
 }
