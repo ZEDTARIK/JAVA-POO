@@ -1,14 +1,14 @@
 package org.learn;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.learn.model.AccountBank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
 
         AccountBank account1;
         account1 = new AccountBank();
@@ -36,7 +36,7 @@ public class Main {
         accountBankMap.put("compte3", new AccountBank());
 
         AccountBank cc = accountBankMap.get("compte2");
-        displayAccount(cc);
+        System.out.println(toJson(cc));
         System.out.println("*********************************************");
 
     }
@@ -49,6 +49,10 @@ public class Main {
         System.out.println("Balance => " + account.getBalance());
         System.out.println("Currency => " + account.getCurrency());
         System.out.println("*********************************************");
+    }
 
+    public  static  String toJson(Object obj) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(obj);
     }
 }
