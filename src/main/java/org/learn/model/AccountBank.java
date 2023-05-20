@@ -2,7 +2,7 @@ package org.learn.model;
 
 import java.util.UUID;
 
-public class AccountBank {
+public abstract class AccountBank {
 
     private String accountId;
     private double balance;
@@ -52,4 +52,6 @@ public class AccountBank {
     public void setStatus(ListStatus status) {
         this.status = status;
     }
+
+    public  abstract String getType();
 }

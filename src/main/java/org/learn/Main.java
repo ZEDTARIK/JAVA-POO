@@ -1,9 +1,9 @@
 package org.learn;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.learn.model.AccountBank;
+import org.learn.model.SavingAccount;
 
 import java.util.*;
 
@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) throws JsonProcessingException {
 
         AccountBank account1;
-        account1 = new AccountBank();
+        account1 = new SavingAccount(15, "USD", 417);
 
         account1.setBalance(5120);
         account1.setCurrency("MAD");
@@ -20,9 +20,9 @@ public class Main {
         System.out.println("********************* List ************************");
 
         List<AccountBank> accountBanks = new ArrayList<>();
-        accountBanks.add(new AccountBank(1500, "MAD"));
-        accountBanks.add(new AccountBank(2540, "USD"));
-        accountBanks.add(new AccountBank(8000, "EUR"));
+        accountBanks.add(new SavingAccount(1500, "MAD", 52));
+        accountBanks.add(new SavingAccount(2540, "USD", 417));
+        accountBanks.add(new SavingAccount(8000, "EUR", 66));
 
         for (AccountBank c : accountBanks) displayAccount(c);
 
@@ -31,9 +31,9 @@ public class Main {
         System.out.println("********************* Map ************************");
 
         Map<String, AccountBank> accountBankMap = new HashMap<>();
-        accountBankMap.put("compte1", new AccountBank());
-        accountBankMap.put("compte2", new AccountBank());
-        accountBankMap.put("compte3", new AccountBank());
+        accountBankMap.put("compte1", new SavingAccount(150, "USD", 51));
+        accountBankMap.put("compte2", new SavingAccount(500, "MAD", 61));
+        accountBankMap.put("compte3", new SavingAccount(800, "EUR", 59));
 
         AccountBank cc = accountBankMap.get("compte2");
         System.out.println(toJson(cc));
