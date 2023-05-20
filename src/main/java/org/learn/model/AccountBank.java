@@ -58,4 +58,14 @@ public abstract class AccountBank {
     public  final  void  getName(){
         System.out.println("Account Bank");
     }
+
+    @Override
+    public String toString() {
+        return "AccountBank{" +
+                "accountId='" + accountId + '\'' +
+                ", balance=" + balance +
+                ", status=" + status +
+                ", currency='" + currency + '\'' +
+                '}';
+    }
 }

@@ -13,6 +13,11 @@ public class SavingAccount extends  AccountBank{
         this.overDraft = overDraft;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + " OverDraft" + overDraft;
+    }
+
     public double getOverDraft() {
         return overDraft;
     }

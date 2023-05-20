@@ -2,22 +2,31 @@ package org.learn.services;
 
 import org.learn.model.AccountBank;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AccountBankServiceImp implements  AccountBankService{
+
+    List<AccountBank> accountBankList = new ArrayList<>();
     @Override
     public AccountBank addAccountBank(AccountBank account) {
-        return null;
+        accountBankList.add(account);
+        return account;
     }
 
     @Override
     public List<AccountBank> getAllAccountBank() {
-        return null;
+        return accountBankList;
     }
 
     @Override
     public AccountBank getAccountBankById(String id) {
-        return null;
+        for(AccountBank account: accountBankList) {
+            if(account.getAccountId().equals(id)) {
+                return  account;
+            }
+        }
+        throw  new RuntimeException("Account Not Found");
     }
 
     @Override
