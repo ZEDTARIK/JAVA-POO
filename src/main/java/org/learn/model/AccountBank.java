@@ -15,6 +15,12 @@ public class AccountBank {
         status = ListStatus.CREATED;
     }
 
+    public  AccountBank(double balance, String currency) {
+        this();
+        this.balance = balance;
+        this.currency = currency;
+    }
+
     public String getAccountId() {
         return accountId;
     }
