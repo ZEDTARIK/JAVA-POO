@@ -12,10 +12,16 @@ public class Main {
 
         AccountBank account1;
         account1 = new SavingAccount(15, "USD", 417);
+        account2 = new SavingAccount(15, "USD", 510);
 
         account1.setBalance(5120);
         account1.setCurrency("MAD");
+
+        account2.setCurrency("EURO");
+        account2.setBalance("50000");
+
         displayAccount(account1);
+        displayAccount(account2);
 
         System.out.println("********************* List ************************");
 
